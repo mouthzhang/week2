@@ -2,7 +2,16 @@
 		//load earthquakedata
 			function loadEarthquakeData() {
 			alert("load the data here");
+		
+}
 </script>	
+<script>
+		//remove earthquakedata
+			function removeEarthquakeData() {
+			alert("remove the earthquake data here");
+}
+</script>
+
 <html>
 <head>
 		<!-- the following links add the CSS and Javascript required for the Leaflet Map -->
@@ -79,7 +88,16 @@
 		// change the map zoom so that all the data is shown
 		mymap.fitBounds(earthquakelayer.getBounds());
 }
+
+		// make sure that there is a variable for the earthquake layer to be referenced by
+		// this should be GLOBAL – i.e. not inside a function – so that any code can see the variable
+		var earthquakelayer;
+		function removeEarthquakeData() {
+		alert("Earthquake data will be removed");
+		mymap.removeLayer( earthquakelayer );
+}
 </script>
 <button id="loadData" name="loadData" onclick="loadEarthquakeData()">Click here to load the data </button>
+<button id="removeEarthquakeData" name="removeEarthquakeData"onclick="removeEarthquakeData()">Click here to remove the Earthquake data </button>
 </body>
 </html>
